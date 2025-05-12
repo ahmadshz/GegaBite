@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Kantumruy Pro Variable', sans-serif;
+}
+.red-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #dbdbdc transparent;
+}
+
+.red-scrollbar::-webkit-scrollbar {
+  height: 5px;
+}
+
+.red-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #f3f4f6;
+  border-radius: 10px;
+}
+
+.red-scrollbar::-webkit-scrollbar-thumb:hover,
+.red-scrollbar::-webkit-scrollbar-thumb:active {
+  scrollbar-color: #dbdbdc transparent;
+}
+
+.red-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* إخفاء شريط التمرير في الأجهزة المحمولة */
+@media (max-width: 768px) {
+  .red-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .red-scrollbar {
+    -ms-overflow-style: none; /* إخفاء التمرير في IE */
+    scrollbar-width: none; /* إخفاء التمرير في Firefox */
+  }
+}
+
