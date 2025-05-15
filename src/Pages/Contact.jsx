@@ -64,7 +64,7 @@ const Contact = () => {
           <h1 className='text-4xl md:text-5xl font-bold mb-4 '>
             Get In Touch
           </h1>
-          <p className='text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto'>
+          <p className='text-sm md:text-xl opacity-90 dark:text-gray-300 max-w-3xl mx-auto'>
             We'd love to hear from you! Message us directly on WhatsApp for quick responses about reservations, menu inquiries, or any questions.
           </p>
         </div>
