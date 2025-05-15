@@ -1,5 +1,5 @@
 const MapComponent = () => {
-  return (      <div className="w-full h-[250px] lg:h-[600px] ">
+  return (      <div className="w-full h-[250px] md:h-[600px] ">
         <iframe
           width="100%"
           height="100%"

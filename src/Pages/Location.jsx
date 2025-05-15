@@ -24,21 +24,21 @@ const Location = () => {
   ]
 
   return (
-    <div className='min-h-screen dark:text-white dark:bg-black'>
+    <div className=' min-h-screen lg:min-h-[80vh] dark:text-white dark:bg-black'>
       <div className='container px-4 sm:px-6'>
         {/* Header with adjusted padding for mobile */}
         <div className='text-center py-8 lg:py-10 lg:pb-12'>
-          <h1 className='dark:text-white text-3xl md:text-4xl lg:text-[45px] font-bold mb-2 lg:mb-4'>
+          <h1 className='dark:text-white text-3xl md:text-4xl lg:text-[45px] font-bold pb-2 lg:pb-4'>
             Our Restaurants.<br/>
             Where to Find Us?
           </h1>
           <p className='text-sm md:text-xl opacity-90 dark:text-gray-300 max-w-3xl mx-auto'>
-            Where to Find Us? Want to have a superb meal in an exceptional setting with family, friends or work colleagues, here are the addresses of our restaurants.
+            Want to have a superb meal in an exceptional setting with family, friends or work colleagues, here are the addresses of our restaurants.
           </p>
         </div>
 
         {/* Grid layout adjusted for mobile */}
-        <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12 pb-12 mb-10 lg:mb-0'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12 pb-12 mb-10 md:mb-0'>
           {/* Info section with better mobile spacing */}
           <div className='flex flex-col gap-6 md:gap-8 lg:gap-10 order-2 lg:order-1'>
             <h2 className='text-xl md:text-2xl lg:text-[28px] font-semibold'>
