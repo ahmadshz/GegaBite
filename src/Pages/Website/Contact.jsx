@@ -58,7 +58,7 @@ const Contact = () => {
 
   return (
     <div className='min-h-screen dark:text-white dark:bg-black'>
-      <div className='container  pt-12 pb-[85px] md:pb-12'>
+      <div className='container  pt-12 pb-[85px] md:pb-32'>
         {/* Header Section */}
         <div className='text-center mb-16'>
           <h1 className='text-4xl md:text-5xl font-bold mb-4 '>

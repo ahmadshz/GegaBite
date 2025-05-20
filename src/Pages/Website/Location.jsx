@@ -1,5 +1,5 @@
 import React from 'react'
-import MapComponent from '../components/Pages/Location/MapComponent'
+import MapComponent from '../../components/Pages/Location/MapComponent'
 import { RxTimer } from 'react-icons/rx'
 import { FaLocationDot } from 'react-icons/fa6'
 import { IoCall } from 'react-icons/io5'
@@ -8,7 +8,7 @@ const Location = () => {
   const location = [
     {
       icon: <RxTimer size={22} />,
-      desc: "12:00 AM - 1:00 AM",
+      desc: "12:00 PM - 1:00 AM",
       title: "Working Hours"
     },
     {

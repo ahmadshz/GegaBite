@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import MobileNav from '../components/Ui/MobileNav'
+import MobileNav from '../../components/Ui/MobileNav'
 
 const Website = () => {
     return (

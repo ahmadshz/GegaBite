@@ -14,25 +14,6 @@ const CategoriesTabs = () => {
         { id: 6, name: 'Drinks' },
         { id: 7, name: 'Breakfast' },
         { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
-        { id: 8, name: 'Lunch' },
         { id: 9, name: 'Dinner' },
         { id: 10, name: 'Top' }
     ];
@@ -46,7 +27,7 @@ const CategoriesTabs = () => {
                         className={`cursor-pointer flex flex-col items-center shrink-0 `}
                         onClick={() => setActiveTab(tab.id)}
                     >
-                        <div className={`px-2 py-3 lg:px-3 lg:py-4 ${activeTab === tab.id ? 'bg-[#FFF002]' : 'bg-gray-100 dark:bg-[#282828]'} w-fit rounded-full`}>
+                        <div className={`px-2 py-3 lg:px-3 lg:py-4 ${activeTab === tab.id ? 'bg-[#FFF001]' : 'bg-gray-100 dark:bg-[#282828]'} w-fit rounded-full`}>
                             <img className='w-7 h-7 lg:w-9 lg:h-9' src={fire} alt='' />
                         </div>
                         <h1 className={`mt-1 lg:mt-3 text-[14px] lg:text-[18px] text-center font-[400] ${activeTab === tab.id ? 'dark:text-white opacity-100' : 'dark:text-white opacity-50'}`}>
