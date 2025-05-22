@@ -1,6 +1,18 @@
-export const API_BASE_URL = 'https://gegabitesapi.onrender.com';
+export const API_BASE_URL = 
+  "https://gega-bites-api.vercel.app";
 
-export const API_HEADERS = () => ({
-  "Content-Type": "application/json",
-  Authorization: `Bearer ${typeof window !== "undefined" ? localStorage.getItem("access_token") : ""}`,
-});
+export const getApiHeaders = () => {
+  const headers = {
+    "Content-Type": "application/json"
+  };
+
+  // التأكد من أننا في متصفح قبل استخدام localStorage
+  if (typeof window !== "undefined") {
+    const token = localStorage.getItem("access_token");
+    if (token) {
+      headers.Authorization = `Bearer ${token}`;
+    }
+  }
+
+  return headers;
+};

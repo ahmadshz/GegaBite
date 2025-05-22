@@ -1,6 +1,6 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import apiClient from '../Api/ApiClient';
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -17,31 +17,38 @@ const Login = () => {
         })
     }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const res = await axios.post(`https://gegabitesapi.onrender.com/api/v1/user/login`, formData, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    withCredentials: true
-                }
-            });
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await apiClient.post('/api/v1/user/login', formData ,
+        {
+    headers: {
+      "Content-Type": "application/json",
+    },
+    withCredentials: true,
+  }
+    );
 
-            console.log(res.data); 
+    console.log(res.data);
 
-            if (res.data.success) {
-                const token = res.data.accessToken;
-
-                localStorage.setItem('access_token', token);
-
-                navigate('/dashboard/categries');
-            }
-
-
-        } catch (err) {
-            console.log('Login error:', err);
-        }
-    };
+    if (res.data.success) {
+      const token = res.data.accessToken;
+      localStorage.setItem("access_token", token);
+      navigate("/dashboard/categries");
+    }
+  } catch (err) {
+    console.error("Login error:", err);
+    // Add user-friendly error handling here
+    if (err.response) {
+      // Handle specific HTTP errors
+      if (err.response.status === 401) {
+        alert("Invalid credentials");
+      }
+    } else {
+      alert("Network error. Please try again.");
+    }
+  }
+};
 
     useEffect(() => {
         const savedMode = localStorage.getItem('darkMode');

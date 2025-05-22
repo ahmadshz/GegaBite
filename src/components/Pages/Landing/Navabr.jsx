@@ -6,11 +6,9 @@ import { HiMoon } from 'react-icons/hi'
 
 const Navabr = () => {
     const [darkMode, setDarkMode] = useState(() => {
-        // ✅ نبدأ بقيمة من localStorage مباشرة
         return localStorage.getItem('darkMode') === 'true'
     })
 
-    // ✅ تحديث الـ DOM و localStorage عند تغيير الوضع
     useEffect(() => {
         if (darkMode) {
             document.documentElement.classList.add('dark')
@@ -19,7 +17,7 @@ const Navabr = () => {
         }
 
         localStorage.setItem('darkMode', darkMode)
-    }, [darkMode]) // مفعّل فقط عند تغيير darkMode
+    }, [darkMode])
 
     const toggleDarkMode = () => {
         setDarkMode(prev => !prev)
@@ -42,7 +40,7 @@ const Navabr = () => {
                 <h3 className='text-[20px] lg:text-[40px] leading-4'>Hello</h3>
                 <img className='mb-1 lg:w-[35px]' src={hand} alt='hand icon' />
             </div>
-            <h1 className='text-[28px] lg:text-[48px] font-semibold flex flex-col leading-10 gap-2'>
+            <h1 className='text-[28px] lg:text-[48px] font-semibold flex flex-col leading-7 md:leading-10 gap-2'>
                 <div>GEGA<span className='text-[#FFF001]'>BITE</span></div>
                 <div>ENJOY EVERY BITE</div>
             </h1>

@@ -1,14 +1,30 @@
-import React, { useState } from 'react';
-import apiClient from '../../../Api/ApiClient'; 
+import React, { useEffect, useState } from 'react';
+import apiClient from '../../../Api/ApiClient';
+import { useNavigate } from 'react-router-dom';
 
 const AddFoodPage = () => {
-  const [category, setCategory] = useState('food');
-  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
+  const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [descriptions, setDescriptions] = useState(['']);
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(null);
+  const [getCategories, setGetCategories] = useState([]);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await apiClient.get('/api/v1/category/index');
+        setGetCategories(response.data.categories);
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+      }
+    };
+    fetchCategories();
+  }, []);
 
   const handleDescriptionChange = (index, value) => {
     const updated = [...descriptions];
@@ -31,30 +47,28 @@ const AddFoodPage = () => {
 
     try {
       const formData = new FormData();
-      formData.append('category', category);
-      formData.append('title', title);
+      formData.append('categoryId', category);
+      formData.append('name', name);
       formData.append('price', price);
-      descriptions.forEach((desc, idx) => {
-        formData.append(`descriptions[${idx}]`, desc);
+      descriptions.forEach((desc, index) => {
+        formData.append(`description[${index}]`, desc);
       });
+
       if (image) {
         formData.append('image', image);
       }
 
-      // Assuming your API accepts multipart/form-data
       const response = await apiClient.post('api/v1/products/create', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
+        },
       });
 
-      setMessage('Food added successfully!');
-      // Reset form or redirect user here if needed
-      setCategory('food');
-      setTitle('');
-      setPrice('');
-      setDescriptions(['']);
-      setImage(null);
-    } catch (error) {
-      console.error('Failed to add food:', error);
+      if (response.data.success) {
+        navigate('/dashboard/viewfoods');
+      }
+    } catch {
       setMessage('Failed to add food. Please try again.');
     } finally {
       setLoading(false);
@@ -73,31 +87,37 @@ const AddFoodPage = () => {
             className="px-4 py-3 rounded-xl border-2 dark:bg-[#3d3d3d] dark:text-white"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
+            required
           >
-            <option value="food">Meals</option>
-            <option value="drink">Drinks</option>
-            <option value="dessert">Sweets</option>
+            <option value="" disabled>
+              Select a category
+            </option>
+            {getCategories.map((cat) => (
+              <option key={cat._id} value={cat._id}>
+                {cat.name}
+              </option>
+            ))}
           </select>
         </div>
 
-        {/* Title Field */}
+        {/* Name */}
         <div className="flex flex-col gap-2">
-          <label className="text-lg dark:text-white font-medium">Title</label>
+          <label className="text-lg dark:text-white font-medium">Name</label>
           <input
             type="text"
-            placeholder="Enter food title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Enter food name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             className="px-4 py-3 rounded-xl border-2 border-gray-300 bg-transparent dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#ff402c]"
             required
           />
         </div>
 
-        {/* Price Field */}
+        {/* Price */}
         <div className="flex flex-col gap-2">
           <label className="text-lg dark:text-white font-medium">Price</label>
           <input
-            type="text"
+            type="number"
             placeholder="Enter food price"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
@@ -106,7 +126,7 @@ const AddFoodPage = () => {
           />
         </div>
 
-        {/* Description Fields */}
+        {/* Descriptions */}
         <div className="flex flex-col gap-2">
           <label className="text-lg dark:text-white font-medium">Description</label>
           {descriptions.map((desc, index) => (
@@ -117,7 +137,7 @@ const AddFoodPage = () => {
               value={desc}
               onChange={(e) => handleDescriptionChange(index, e.target.value)}
               className="px-4 py-3 rounded-xl border-2 border-gray-300 bg-transparent dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#ff402c]"
-              required={index === 0} 
+              required={index === 0}
             />
           ))}
           <button
@@ -129,7 +149,7 @@ const AddFoodPage = () => {
           </button>
         </div>
 
-        {/* Image Upload */}
+        {/* Image */}
         <div className="flex flex-col gap-2">
           <label className="text-lg dark:text-white font-medium">Image</label>
           <input
@@ -142,7 +162,7 @@ const AddFoodPage = () => {
           />
         </div>
 
-        {/* Submit Button */}
+        {/* Submit */}
         <button
           type="submit"
           disabled={loading}
@@ -150,8 +170,9 @@ const AddFoodPage = () => {
         >
           {loading ? 'Adding...' : 'Add Food'}
         </button>
+
         {message && (
-          <p className={`mt-3 ${message.includes('Failed') ? 'text-red-500' : 'text-green-500'}`}>
+          <p className={`mt-3 text-red-500  font-semibold text-xl`}>
             {message}
           </p>
         )}

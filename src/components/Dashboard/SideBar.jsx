@@ -1,10 +1,15 @@
 import React from 'react'
+import { BiLogOut } from 'react-icons/bi';
 import { MdOutlineAddCircleOutline, MdOutlineFastfood } from 'react-icons/md';
 import { TbCategory2 } from "react-icons/tb";
 import { TbCategoryPlus } from 'react-icons/tb';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import apiClient from '../../Api/ApiClient';
 
 const SideBar = ({ isOpen }) => {
+    const navigate = useNavigate();
+
+
     const navLink = [
         {
             icon: <TbCategory2 size={24} />,
@@ -28,31 +33,49 @@ const SideBar = ({ isOpen }) => {
         },
     ]
 
+    const handleLogout = () => {
+        apiClient.get('/api/v1/user/logout').then(() => {
+            localStorage.removeItem("access_token")
+
+        })
+        navigate('/')
+    };
 
     return (
+
         <div className={`fixed bottom-0 ${isOpen ? " w-60 xl:w-80 px-8 " : " w-20 px-4 "} h-[calc(100vh-70px)]  lg:h-[calc(100%-80px)]  border-r-2  border-[#282828] dark:border-gray-600   
-         flex flex-col   items-center gap-3   py-4  dark:bg-[#282828]  duration-300`}>
-
-            {
-                navLink.map((item, index) => (
-                    <NavLink
-                        to={item.link}
-                        key={index}
-                        className={({ isActive }) =>
-                            `text-xl font-semibold w-full rounded-md flex items-center gap-2
+         flex flex-col   items-center justify-between gap-3   py-4  dark:bg-[#282828]  duration-300`}>
+            <div className='flex flex-col  w-full   gap-3'>
+                {
+                    navLink.map((item, index) => (
+                        <NavLink
+                            to={item.link}
+                            key={index}
+                            className={({ isActive }) =>
+                                `text-xl font-semibold w-full rounded-md flex items-center gap-2 dark:text-white
                               ${isOpen ? "p-3" : "justify-center p-2"}
-                              ${isActive ? "bg-gray-200 dark:bg-[#3d3d3d] " : " dark:text-white"}`
-                        }
-                    >
-                        {item.icon}
-                        <span className={`${isOpen ? "block" : "hidden"} text-nowrap`}>
-                            {item.title}
-                        </span>
-                    </NavLink>
+                              ${isActive ? "bg-gray-200 dark:bg-[#515151] " : " "}`
+                            }
+                        >
+                            {item.icon}
+                            <span className={`${isOpen ? "block" : "hidden"} text-nowrap`}>
+                                {item.title}
+                            </span>
+                        </NavLink>
 
-                ))
-            }
+                    ))
+                }
+            </div>
+            <button
+                onClick={handleLogout}
+                className=' font-semibold w-full rounded-md flex items-center gap-2 bg-red-600 text-white p-3   '>
 
+                <BiLogOut size={24} />
+                <span className={`${isOpen ? "block" : "hidden"} text-nowrap`}>
+                    LogOut
+                </span>
+
+            </button>
         </div>
     )
 }

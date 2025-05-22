@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_BASE_URL } from "./Api.jsx";
+import { API_BASE_URL } from "./Api";
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
@@ -7,11 +7,9 @@ const apiClient = axios.create({
   withCredentials: true,
 });
 
-// دالة لجلب التوكن من localStorage
 const getAccessToken = () =>
   typeof window !== "undefined" ? localStorage.getItem("access_token") : "";
 
-// لتجنب إرسال أكثر من طلب refresh بنفس الوقت
 let isRefreshing = false;
 let refreshSubscribers = [];
 
@@ -30,15 +28,14 @@ const refreshAccessToken = async () => {
   isRefreshing = true;
 
   try {
-    const response = await axios.post(`${API_BASE_URL}/api/v1/user/refresh`);
+    const response = await apiClient.get('/api/v1/user/refresh');
     const newToken = response.data.accessToken;
-
     localStorage.setItem("access_token", newToken);
     onRefreshed(newToken);
 
     return newToken;
   } catch (error) {
-    console.log(error)
+    console.log(error);
     localStorage.removeItem("access_token");
     window.location.href = "/login";
     return null;
