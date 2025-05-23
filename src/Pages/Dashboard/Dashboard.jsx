@@ -20,7 +20,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="min-h-screen dark:bg-black w-full">
+    <div className="min-h-screen dark:bg-black w-full dark:text-white">
       {/* Top Bar */}
       <TopBar toggleClose={toggleClose} isOpen={isOpen} />
 
