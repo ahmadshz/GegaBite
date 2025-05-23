@@ -31,11 +31,11 @@ const Navabr = () => {
                 style={{ backgroundImage: `url(${bgImage})` }}
             >
                 <div className='absolute top-4 left-4 p-2 rounded-md bg- w-fit'>
-                    <img className='w-[40px] lg:w-[100px] h-[40px] lg:h-[100px] rounded-md' src={logo} alt='logo' />
+                    <img className='w-[50px] lg:w-[100px] h-[50px] lg:h-[100px] rounded-md' src={logo} alt='logo' />
                 </div>
                 <button
                     onClick={toggleDarkMode}
-                    className='absolute top-4 right-4  bg-gray-200 dark:bg-[#282828] text-black dark:text-white p-2 rounded-full flex 
+                    className='absolute top-[30px] right-4  bg-white dark:bg-[#282828] text-black dark:text-white p-2 rounded-full flex 
                     items-center text-[22px] lg:text-[35px]'
                 >
                     {darkMode ? <HiMoon className='text-[#FEC30D]' /> : <IoSunnyOutline />}
