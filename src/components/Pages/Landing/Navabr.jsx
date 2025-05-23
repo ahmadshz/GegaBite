@@ -27,7 +27,7 @@ const Navabr = () => {
     return (
         <div className=' flex flex-col gap-4 lg:gap-8'>
             <div
-                className="flex items-center justify-between h-64 w-full bg-cover bg-center "
+                className="flex items-center justify-center h-64 lg:h-[500px] w-full bg-cover bg-center "
                 style={{ backgroundImage: `url(${bgImage})` }}
             >
                 <div className='absolute top-4 flex items-center justify-between w-full container'>
