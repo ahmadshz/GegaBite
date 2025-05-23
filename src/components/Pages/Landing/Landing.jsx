@@ -10,7 +10,7 @@ import Location from '../../../Pages/Website/Location'
 
 const Landing = () => {
   return (
-    <div className=' min-h-screen py-5 md:py-0 md:pt-10 dark:text-white dark:bg-black ' >
+    <div className=' min-h-screen pb-5 md:py-0 md:pt-0 dark:text-white dark:bg-black ' >
       <Navabr />
       <SearchBar />
       <CategoriesTabs />

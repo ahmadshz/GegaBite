@@ -1,9 +1,9 @@
 import React from 'react'
-import { Navigate } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
 
 const RequireBack = () => {
     const token = localStorage.getItem('access_token')
-    return token ? <Navigate to={'/'}  /> : <Navigate to={'/login'} replace={true} />
+    return token ? <Navigate to={'/'}  /> : <Outlet />
 }
 
 export default RequireBack

@@ -27,8 +27,7 @@ const RecipeList = () => {
                 {data.map((item, index) => (
                     <Link to={`/singleproduct/${item._id}`}
                         key={index}
-                        className='relative pt-16  cursor-pointer bg-gray-100 dark:bg-[#282828] rounded-[28px] min-h-[178px] lg:min-h-[230px]
-                         text-center'
+                        className='relative pt-16  cursor-pointer bg-gray-100 dark:bg-[#282828] rounded-[28px] min-h-[178px] lg:min-h-[230px] text-center'
                     >
                         {/* الصورة طالعة لفوق نسبياً */}
                         <img

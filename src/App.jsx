@@ -45,6 +45,7 @@ const App = () => {
         </Route>
 
         <Route path='/singleproduct/:id' element={<SingleProduct />} />
+        
       </Routes>
     </div>
   )
