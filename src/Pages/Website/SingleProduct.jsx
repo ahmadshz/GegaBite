@@ -38,15 +38,15 @@ const SingleProduct = () => {
             {
                 data.map((item, index) => (
                     <div key={index}>
-                        <div className='h-[35vh] flex items-center justify-center'>
-                            <img className='mx-auto w-40 h-40 rounded-full' src={item.image} alt={item.name} />
+                        <div className='py-14 flex items-center justify-center'>
+                            <img className='mx-auto w-52 h-52 rounded-md' src={item.image} alt={item.name} />
                         </div>
                         <div className='min-h-[calc(100vh-35vh)] container bg-gray-100 w-full dark:bg-[#282828] py-5 rounded-t-[40px]'>
                             <div className='text-center text-[32px]'>{item.name}</div>
                             <div className='flex justify-center items-center gap-1 mt-4 text-sm text-[14px] lg:text-[20px]'>
-                                <div className='w-2/5 text-center'>{item.price}$</div>
+                                <div className='w-2/5 text-center text-[16px]'>{item.price}$</div>
                                 <div className='h-[50px] lg:h-[100px] w-[2px] rounded-full bg-[#282828] dark:bg-white' />
-                                <div className='w-2/5 text-center break-words py-2'>
+                                <div className='w-2/5 text-center break-words py-2 text-[16px]'>
                                     {item.categoryId.name.length > 12
                                         ? item.categoryId.name.slice(0, 12) + '...'
                                         : item.categoryId.name}
