@@ -27,7 +27,7 @@ const Navabr = () => {
     return (
         <div className=' flex flex-col gap-4 lg:gap-8'>
             <div
-                className="flex items-center justify-between h-64 w-full bg-cover bg-center relative"
+                className="flex items-center justify-between h-64 w-full bg-cover bg-center "
                 style={{ backgroundImage: `url(${bgImage})` }}
             >
                 <div className='absolute top-4 left-4 p-2 rounded-md bg- w-fit'>
@@ -35,7 +35,8 @@ const Navabr = () => {
                 </div>
                 <button
                     onClick={toggleDarkMode}
-                    className='absolute top-4 right-4  bg-gray-200 dark:bg-[#282828] text-black dark:text-white p-3 rounded-full flex items-center text-[22px] lg:text-[40px]'
+                    className='absolute top-4 right-4  bg-gray-200 dark:bg-[#282828] text-black dark:text-white p-2 rounded-full flex 
+                    items-center text-[22px] lg:text-[35px]'
                 >
                     {darkMode ? <HiMoon className='text-[#FEC30D]' /> : <IoSunnyOutline />}
                 </button>
