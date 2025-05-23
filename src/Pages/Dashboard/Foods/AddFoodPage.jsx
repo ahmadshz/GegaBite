@@ -137,7 +137,6 @@ const AddFoodPage = () => {
               value={desc}
               onChange={(e) => handleDescriptionChange(index, e.target.value)}
               className="px-4 py-3 rounded-xl border-2 border-gray-300 bg-transparent dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#ff402c]"
-              required={index === 0}
             />
           ))}
           <button

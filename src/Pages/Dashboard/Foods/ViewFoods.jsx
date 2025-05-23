@@ -52,7 +52,6 @@ const ViewFoods = () => {
                             <th className="px-6 py-3 text-left text-lg font-medium uppercase tracking-wider">Category</th>
                             <th className="px-6 py-3 text-left text-lg font-medium uppercase tracking-wider">Title</th>
                             <th className="px-6 py-3 text-left text-lg font-medium uppercase tracking-wider">Price</th>
-                            <th className="px-6 py-3 text-left text-lg font-medium uppercase tracking-wider">Description</th>
                             <th className="px-6 py-3 text-left text-lg font-medium uppercase tracking-wider">Actions</th>
                         </tr>
                     </thead>
@@ -82,7 +81,6 @@ const ViewFoods = () => {
                                         <td className="px-6 py-4 whitespace-nowrap font-medium">{item.slug}</td>
                                         <td className="px-6 py-4 whitespace-nowrap font-medium">{item.name}</td>
                                         <td className="px-6 py-4 whitespace-nowrap font-medium">{item.price}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap font-medium">Sample Product</td>
                                         <td className="px-6 py-4 whitespace-nowrap">
                                             <div className="flex space-x-2">
                                                 <Link

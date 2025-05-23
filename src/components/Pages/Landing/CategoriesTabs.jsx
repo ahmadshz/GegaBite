@@ -48,7 +48,7 @@ const CategoriesTabs = ({ onCategorySelect, selectedCategoryId }) => {
             <div className='flex gap-2 md:gap-5 lg:gap-6 whitespace-nowrap overflow-x-auto red-scrollbar lg:pb-2'>
                 {/* All Categories Tab */}
                 <div className='cursor-pointer flex flex-col items-center shrink-0'>
-                    <div 
+                    <div
                         className={`px-3 py-1 lg:px-3 lg:py-4 flex items-center gap-2
                             ${!selectedCategoryId ? 'bg-[#FEC30D]' : 'bg-gray-100 dark:bg-[#282828]'} 
                             w-fit rounded-full`}
@@ -69,11 +69,14 @@ const CategoriesTabs = ({ onCategorySelect, selectedCategoryId }) => {
                             ${selectedCategoryId === tab._id ? 'bg-[#FEC30D]' : 'bg-gray-100 dark:bg-[#282828]'} 
                             w-fit rounded-full`}
                         >
-                            <img 
-                                className='w-5 h-5 lg:w-7 lg:h-7 object-cover rounded-full' 
-                                src={tab.image} 
-                                alt={tab.name} 
-                            />
+                            {
+                                tab.image &&
+                                    <img
+                                        className='w-5 h-5 lg:w-7 lg:h-7 object-cover rounded-full'
+                                        src={tab.image}
+                                        alt={tab.name}
+                                    />
+                            }
                             <span className='text-sm lg:text-lg'>{tab.name}</span>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import TopBar from '../../components/Dashboard/TopBar'
 import SideBar from '../../components/Dashboard/SideBar'
 import { Outlet } from 'react-router-dom';
@@ -10,14 +10,7 @@ const Dashboard = () => {
     setIsOpen(!isOpen)
   }
 
-  useEffect(() => {
-    const savedMode = localStorage.getItem('darkMode');
-    if (savedMode === 'true') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, []);
+  
 
   return (
     <div className="min-h-screen dark:bg-black w-full dark:text-white">

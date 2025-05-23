@@ -44,11 +44,13 @@ const SingleProduct = () => {
                             {
                                 showImage && (
                                     <div className='fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black bg-opacity-65 z-50'>
-                                        <img onClick={() => setShowImage(false)} className='w-11/12 h-11/12 rounded-md' src={item.image} alt={item.name} />
-                                        <div className='absolute top-44 right-6 cursor-pointer' onClick={() => setShowImage(false)}>
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                            </svg>
+                                        <div className='relative w-11/12 h-11/12'>
+                                            <img onClick={() => setShowImage(false)} className=' w-full h-full rounded-md' src={item.image} alt={item.name} />
+                                            <div className='absolute top-4 right-4 cursor-pointer' onClick={() => setShowImage(false)}>
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                                </svg>
+                                            </div>
                                         </div>
                                     </div>
                                 )
