@@ -22,7 +22,7 @@ const SingleProduct = () => {
             try {
                 setLoading(true);
                 const response = await apiClient.get(`/api/v1/products/show/${id}`);
-                setData([response.data.product]); // نحول الكائن إلى مصفوفة
+                setData([response.data.product]); 
             } catch (error) {
                 console.error('Error fetching data:', error);
                 setError(error.message);
@@ -46,7 +46,7 @@ const SingleProduct = () => {
                 data.map((item, index) => (
                     <div key={index}>
                         <div className='h-[35vh] flex items-center justify-center'>
-                            <img className='mx-auto w-24 h-24 lg:w-28 lg:h-28' src={item.image} alt={item.name} />
+                            <img className='mx-auto w-40 h-40 rounded-full' src={item.image} alt={item.name} />
                         </div>
                         <div className='min-h-[calc(100vh-35vh)] container bg-gray-100 w-full dark:bg-[#282828] py-5 rounded-t-[40px]'>
                             <div className='text-center text-[32px]'>{item.name}</div>

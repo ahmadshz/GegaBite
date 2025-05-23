@@ -1,28 +1,11 @@
 import logo from '../../../assets/logo.png'
 import hand from '../../../assets/hand.svg'
-import { useEffect, useState } from 'react'
 import { IoSunnyOutline } from 'react-icons/io5'
 import { HiMoon } from 'react-icons/hi'
 import bgImage from '../../../assets/bg.jpg'
 
-const Navabr = () => {
-    const [darkMode, setDarkMode] = useState(() => {
-        return localStorage.getItem('darkMode') === 'true'
-    })
-
-    useEffect(() => {
-        if (darkMode) {
-            document.documentElement.classList.add('dark')
-        } else {
-            document.documentElement.classList.remove('dark')
-        }
-
-        localStorage.setItem('darkMode', darkMode)
-    }, [darkMode])
-
-    const toggleDarkMode = () => {
-        setDarkMode(prev => !prev)
-    }
+const Navabr = ({ toggleDarkMode, darkMode }) => {
+    
 
     return (
         <div className=' flex flex-col gap-4 lg:gap-8'>

@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { FaPhone, FaWhatsapp, FaInstagram, FaTiktok } from 'react-icons/fa';
-import { MdEmail, MdLocationOn } from 'react-icons/md';
-import { RxTimer } from 'react-icons/rx';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -53,7 +51,7 @@ const Contact = () => {
     e.preventDefault();
     const { name, phone, order } = formData;
     const text = `Hello Gega Bite!%0A%0AMy name is ${name}.%0APhone: ${phone}%0A%0AMy Order:%0A${order}`;
-    window.open(`https://wa.me/96171909110?text=${text}`, '_blank');
+    window.open(`https://wa.me/96179166996?text=${text}`, '_blank');
   };
 
   return (
