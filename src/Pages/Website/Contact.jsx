@@ -95,9 +95,9 @@ const Contact = () => {
         {/* WhatsApp Message Section */}
         <div className='max-w-4xl mx-auto bg-white dark:bg-[#282828] rounded-xl shadow-lg overflow-hidden '  >
           <div className='md:flex'>
-            <div className='md:w-1/2 bg-amber-500 p-8 md:p-12 flex flex-col justify-center'>
-              <h2 className='text-2xl font-bold text-white mb-4'>Why WhatsApp?</h2>
-              <ul className='space-y-3 text-white'>
+            <div className='md:w-1/2 bg-[#FEC30D] p-8 md:p-12 flex flex-col justify-center'>
+              <h2 className='text-2xl font-bold  mb-4'>Why WhatsApp?</h2>
+              <ul className='space-y-3 '>
                 <li className='flex items-start gap-2'>
                   <svg className='w-5 h-5 mt-0.5 flex-shrink-0' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M5 13l4 4L19 7' />
@@ -125,10 +125,10 @@ const Contact = () => {
               </ul>
               <div className='mt-8'>
                 <div className='flex items-center gap-3 bg-white/20 p-3 rounded-lg'>
-                  <FaWhatsapp className='text-white' size={24} />
+                  <FaWhatsapp className='' size={24} />
                   <div>
-                    <p className='text-sm text-white/80'>Primary WhatsApp</p>
-                    <p className='text-white font-medium'>+961 79 166 996</p>
+                    <p className='text-sm '>Primary WhatsApp</p>
+                    <p className=' font-medium'>+961 79 166 996</p>
                   </div>
                 </div>
               </div>

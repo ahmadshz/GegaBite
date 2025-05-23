@@ -31,9 +31,9 @@ const Navabr = () => {
                 </div>
                 <button
                     onClick={toggleDarkMode}
-                    className='bg-gray-200 dark:bg-[#282828] text-black dark:text-white p-2 lg:p-3 rounded-full flex items-center lg:text-[40px]'
+                    className='bg-gray-200 dark:bg-[#282828] text-black dark:text-white p-3 rounded-full flex items-center text-[22px] lg:text-[40px]'
                 >
-                    {darkMode ? <HiMoon className='text-[#FFF001]' /> : <IoSunnyOutline />}
+                    {darkMode ? <HiMoon className='text-[#FEC30D]' /> : <IoSunnyOutline />}
                 </button>
             </div>
             <div className='flex items-center gap-2'>
@@ -41,7 +41,7 @@ const Navabr = () => {
                 <img className='mb-1 lg:w-[35px]' src={hand} alt='hand icon' />
             </div>
             <h1 className='text-[28px] lg:text-[48px] font-semibold flex flex-col leading-7 md:leading-10 gap-2'>
-                <div>GEGA<span className='text-[#FFF001]'>BITE</span></div>
+                <div>GEGA<span className='text-[#FEC30D]'>BITE</span></div>
                 <div>ENJOY EVERY BITE</div>
             </h1>
         </div>
