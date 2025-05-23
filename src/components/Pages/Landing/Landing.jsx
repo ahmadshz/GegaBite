@@ -12,6 +12,7 @@ const Landing = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
 
+
   useEffect(() => {
     const root = document.documentElement;
     if (darkMode) {
@@ -28,16 +29,17 @@ const Landing = () => {
   }
 
   return (
-   <div className='min-h-screen pb-5 md:py-0 md:pt-0 dark:text-white dark:bg-black'>
-      <Navabr toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+    <div className='min-h-screen pb-5 md:py-0 md:pt-0 dark:text-white dark:bg-black'>
+     
+    <Navabr toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
       <SearchBar onSearch={setSearchTerm} />
-      <CategoriesTabs 
-        onCategorySelect={setSelectedCategoryId} 
+      <CategoriesTabs
+        onCategorySelect={setSelectedCategoryId}
         selectedCategoryId={selectedCategoryId}
       />
-      <RecipeList 
-        searchTerm={searchTerm} 
-        selectedCategoryId={selectedCategoryId} 
+      <RecipeList
+        searchTerm={searchTerm}
+        selectedCategoryId={selectedCategoryId}
       />
       <div className='hidden md:block mt-28 lg:mt-44'>
         <Location />

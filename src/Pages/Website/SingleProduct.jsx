@@ -30,7 +30,10 @@ const SingleProduct = () => {
 
     console.log(data)
 
-    if (loading) return <div className='dark:bg-black dark:text-white min-h-screen'>Loading...</div>;
+    if (loading) return <div className='dark:bg-black text-[18px] font-semibold dark:text-white min-h-screen flex items-center justify-center'>
+      Loading...   
+    
+    </div>;
     if (error) return <div className='dark:bg-black dark:text-white min-h-screen'>Error: {error}</div>;
     if (!data.length) return <div className='dark:bg-black dark:text-white min-h-screen'>Product not found</div>;
 
