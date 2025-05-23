@@ -30,16 +30,18 @@ const Navabr = () => {
                 className="flex items-center justify-between h-64 w-full bg-cover bg-center "
                 style={{ backgroundImage: `url(${bgImage})` }}
             >
-                <div className='absolute top-4 left-4 p-2 rounded-md bg- w-fit'>
-                    <img className='w-[50px] lg:w-[100px] h-[50px] lg:h-[100px] rounded-md' src={logo} alt='logo' />
-                </div>
-                <button
-                    onClick={toggleDarkMode}
-                    className='absolute top-[30px] right-4  bg-white dark:bg-[#282828] text-black dark:text-white p-2 rounded-full flex 
+                <div className='absolute top-4 flex items-center justify-between w-full container'>
+                    <div className=' rounded-md bg- w-fit'>
+                        <img className='w-[50px] lg:w-[100px] h-[50px] lg:h-[100px] rounded-md' src={logo} alt='logo' />
+                    </div>
+                    <button
+                        onClick={toggleDarkMode}
+                        className='  bg-white dark:bg-[#282828] text-black dark:text-white p-2 rounded-full flex 
                     items-center text-[22px] lg:text-[35px]'
-                >
-                    {darkMode ? <HiMoon className='text-[#FEC30D]' /> : <IoSunnyOutline />}
-                </button>
+                    >
+                        {darkMode ? <HiMoon className='text-[#FEC30D]' /> : <IoSunnyOutline />}
+                    </button>
+                </div>
             </div>
             <div className='flex items-center gap-2 container'>
                 <h3 className='text-[20px] lg:text-[40px] leading-4'>Hello</h3>
