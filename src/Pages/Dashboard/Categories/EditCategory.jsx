@@ -57,40 +57,42 @@ const EditCategory = () => {
     };
 
     return (
-        <div className="flex flex-col gap-12">
-            <h1 className="text-4xl dark:text-white font-semibold mt-4">
+        <div className="flex flex-col gap-5 lg:gap-12">
+            <h1 className="text-2xl xl:text-4xl dark:text-white font-semibold ">
                 Edit Category
             </h1>
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-6 w-full">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3 lg:gap-6 w-full">
                 {/* Title Field */}
-                <div className="flex flex-col gap-2">
-                    <label className="text-lg dark:text-white font-medium">Title</label>
+                <div className="flex flex-col lg:gap-2">
+                    <label className="text-base lg:text-lg dark:text-white font-medium">Title</label>
                     <input
                         type="text"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                         placeholder="Enter category title"
-                        className="px-4 py-3 rounded-xl border-2 border-gray-300 bg-transparent dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#ff402c]"
+                        className="px-4 py-2 lg:py-3 rounded-xl border-2 border-gray-300 bg-transparent dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#ff402c]"
                     />
                 </div>
 
                 {/* Image Upload */}
-                <div className="flex flex-col gap-2">
-                    <label className="text-lg dark:text-white font-medium">Image</label>
+                <div className="flex flex-col lg:gap-2">
+                    <label className="text-base lg:text-lg dark:text-white font-medium">Image</label>
                     <input
                         type="file"
                         accept="image/*"
                         onChange={(e) => setImage(e.target.files[0])}
-                        className="px-4 py-2 rounded-xl border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-[#2c2c2c] text-gray-800 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#282828] file:text-white hover:file:bg-[#3d3d3d]"
+                        className="px-4 py-2 rounded-xl border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-[#2c2c2c] text-gray-800
+                         dark:text-white file:mr-4 file:py-1 lg:file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold 
+                         file:bg-[#282828] file:text-white hover:file:bg-[#3d3d3d]"
                     />
                 </div>
 
                 {/* Submit Button */}
                 <button
                     type="submit"
-                    className={`mt-4 px-6 py-4 rounded-xl bg-[#282828] dark:bg-[#515151] text-white font-semibold  transition
-                     duration-300 text-[20px]  ${loading ? "opacity-80 cursor-not-allowed" : "opacity-100"} `}
+                    className={`mt-4 mb-5 px-6 py-2 lg:py-4 rounded-xl bg-[#282828] dark:bg-[#515151] text-white font-semibold  transition
+                     duration-300  text-[18px] lg:text-[20px]  ${loading ? "opacity-80 cursor-not-allowed" : "opacity-100"} `}
                     disabled={loading}
                 >
                     {loading ? "Updating..." : "Update Category"}

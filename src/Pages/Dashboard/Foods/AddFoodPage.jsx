@@ -76,15 +76,15 @@ const AddFoodPage = () => {
   };
 
   return (
-    <div className="flex flex-col gap-12">
-      <h1 className="text-4xl dark:text-white font-semibold mt-4">Add Food</h1>
+    <div className="flex flex-col gap-5 lg:gap-12">
+      <h1 className=" text-2xl lg:text-4xl dark:text-white font-semibold ">Add Food</h1>
 
-      <form className="flex flex-col gap-6 w-full" onSubmit={handleSubmit}>
+      <form className="flex flex-col gap-3 lg:gap-6 w-full" onSubmit={handleSubmit}>
         {/* Select Category */}
-        <div className="flex flex-col gap-2">
-          <label className="text-lg dark:text-white font-medium">Categories</label>
+        <div className="flex flex-col lg:gap-2">
+          <label className=" text-base lg:text-lg dark:text-white font-medium">Categories</label>
           <select
-            className="px-4 py-3 rounded-xl border-2 dark:bg-[#3d3d3d] dark:text-white"
+            className="px-4 py-2 lg:py-3 rounded-xl border-2 dark:bg-[#3d3d3d] dark:text-white"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             required
@@ -101,44 +101,46 @@ const AddFoodPage = () => {
         </div>
 
         {/* Name */}
-        <div className="flex flex-col gap-2">
-          <label className="text-lg dark:text-white font-medium">Name</label>
+        <div className="flex flex-col lg:gap-2">
+          <label className=" text-base lg:text-lg dark:text-white font-medium">Name</label>
           <input
             type="text"
             placeholder="Enter food name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="px-4 py-3 rounded-xl border-2 border-gray-300 bg-transparent dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#ff402c]"
+            className="px-4 py-2 lg:py-3 rounded-xl border-2 border-gray-300 bg-transparent dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#ff402c]"
             required
           />
         </div>
 
         {/* Price */}
-        <div className="flex flex-col gap-2">
-          <label className="text-lg dark:text-white font-medium">Price</label>
+        <div className="flex flex-col lg:gap-2">
+          <label className="text-base lg:text-lg dark:text-white font-medium">Price</label>
           <input
             type="number"
             placeholder="Enter food price"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
-            className="px-4 py-3 rounded-xl border-2 border-gray-300 bg-transparent dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#ff402c]"
+            className="px-4 py-2 lg:py-3 rounded-xl border-2 border-gray-300 bg-transparent dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#ff402c]"
             required
           />
         </div>
 
         {/* Descriptions */}
-        <div className="flex flex-col gap-2">
-          <label className="text-lg dark:text-white font-medium">Description</label>
-          {descriptions.map((desc, index) => (
-            <input
-              key={index}
-              type="text"
-              placeholder={`Description ${index + 1}`}
-              value={desc}
-              onChange={(e) => handleDescriptionChange(index, e.target.value)}
-              className="px-4 py-3 rounded-xl border-2 border-gray-300 bg-transparent dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#ff402c]"
-            />
-          ))}
+        <div className="flex flex-col lg:gap-2">
+          <label className=" text-base lg:text-lg dark:text-white font-medium">Description</label>
+          <div className="flex flex-col gap-2">
+            {descriptions.map((desc, index) => (
+              <input
+                key={index}
+                type="text"
+                placeholder={`Description ${index + 1}`}
+                value={desc}
+                onChange={(e) => handleDescriptionChange(index, e.target.value)}
+                className="px-4 py-2 lg:py-3 rounded-xl border-2 border-gray-300 bg-transparent dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#ff402c]"
+              />
+            ))}
+          </div>
           <button
             type="button"
             onClick={addDescriptionField}
@@ -149,14 +151,14 @@ const AddFoodPage = () => {
         </div>
 
         {/* Image */}
-        <div className="flex flex-col gap-2">
-          <label className="text-lg dark:text-white font-medium">Image</label>
+        <div className="flex flex-col lg:gap-2">
+          <label className=" text-base lg:text-lg dark:text-white font-medium">Image</label>
           <input
             type="file"
             accept="image/*"
             onChange={handleImageChange}
             className="px-4 py-2 rounded-xl border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-[#2c2c2c] text-gray-800 dark:text-white
-              file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#282828] file:text-white hover:file:bg-[#3d3d3d]"
+              file:mr-4  file:py-1 lg:file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#282828] file:text-white hover:file:bg-[#3d3d3d]"
             required
           />
         </div>
@@ -165,7 +167,7 @@ const AddFoodPage = () => {
         <button
           type="submit"
           disabled={loading}
-          className="mt-4 px-6 py-4 rounded-xl bg-[#282828] dark:bg-[#515151] text-white font-semibold hover:opacity-95 transition duration-300 text-[20px]"
+          className="mt-4  mb-5 px-6 py-2 lg:py-4 rounded-xl bg-[#282828] dark:bg-[#515151] text-white font-semibold hover:opacity-95 transition duration-300 text-[20px]"
         >
           {loading ? 'Adding...' : 'Add Food'}
         </button>
