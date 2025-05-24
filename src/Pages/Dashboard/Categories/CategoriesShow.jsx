@@ -55,7 +55,7 @@ const CategoriesShow = () => {
                         {
                             loading ? (
                                 <tr className="  hover:bg-gray-200 dark:odd:bg-[#2e2e2e] dark:even:bg-[#1f1f1f] dark:hover:bg-[#3d3d3d] transition-colors dark:text-white">
-                                    <td colSpan={4} className=" py-4 whitespace-nowrap text-lg font-semibold text-center ">Loading...</td>
+                                    <td colSpan={4} className=" py-4 whitespace-nowrap text-base lg:text-lg font-semibold text-center ">Loading...</td>
                                 </tr>
                             ) :
                                 categories.map((item, index) => (
@@ -66,11 +66,20 @@ const CategoriesShow = () => {
                                         <td className="px-6 py-3 lg:py-4 whitespace-nowrap text-sm">{index + 1}</td>
                                         <td className="px-6  whitespace-nowrap">
                                             <div className="flex-shrink-0  ">
-                                                <img
-                                                    className=" h-10 lg:h-12 w-10 lg:w-12 rounded border border-gray-500"
-                                                    src={`${item.image}`}
-                                                    alt="avatar"
-                                                />
+                                            {
+                                                item.image ? (
+                                                    <img
+                                                        className=" h-10 lg:h-12 w-10 lg:w-12 rounded border border-gray-500"
+                                                        src="https://via.placeholder.com/150"
+                                                        alt="avatar"
+                                                    />
+                                                )
+                                                :
+                                                (
+                                                    <h1 className='font-medium'>No Image</h1>
+                                                )
+                                            }
+                                                
                                             </div>
                                         </td>
                                         <td className="px-6 py-3 lg:py-4 whitespace-nowrap font-medium">{item.name}</td>
