@@ -6,7 +6,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import apiClient from '../../Api/ApiClient';
 import { LuPanelLeftClose } from 'react-icons/lu';
 
-const SideBar = ({ isOpen ,toggleClose }) => {
+const SideBar = ({ isOpen, toggleClose }) => {
   const navigate = useNavigate();
 
   const navLink = [
@@ -46,9 +46,8 @@ const SideBar = ({ isOpen ,toggleClose }) => {
 
       <div className='flex flex-col w-full gap-3'>
         <div className=' lg:hidden'>
-          <div className=' px-3 lg:px-8 h-full flex items-center gap-2 lg:gap-5'>
-           
-                <LuPanelLeftClose onClick={toggleClose} className='text-3xl xl:text-4xl  dark:text-white' />
+          <div className={` ${isOpen ? "block" : "hidden"} px-3 lg:px-8 h-full flex items-center gap-2 lg:gap-5`}>
+            <LuPanelLeftClose onClick={toggleClose} className='text-3xl xl:text-4xl  dark:text-white' />
             <h1 className='  text-2xl xl:text-4xl font-bold  dark:text-white'>Gega Bite</h1>
           </div>
         </div>
