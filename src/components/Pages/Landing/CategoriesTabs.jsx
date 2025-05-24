@@ -32,9 +32,8 @@ const CategoriesTabs = ({ onCategorySelect, selectedCategoryId }) => {
                 <div className='flex gap-2 md:gap-5 lg:gap-6 overflow-x-auto red-scrollbar'>
                     {[...Array(5)].map((_, i) => (
                         <div key={i} className='shrink-0'>
-                            <div className='px-3 py-1 lg:px-3 lg:py-4 flex items-center gap-2 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse'>
-                                <div className='w-5 h-5 lg:w-7 lg:h-7 rounded-full bg-gray-300 dark:bg-gray-600'></div>
-                                <div className='w-16 h-4 bg-gray-300 dark:bg-gray-600 rounded'></div>
+                            <div className='w-24 h-6 flex items-center gap-2 bg-gray-200 dark:bg-[#282828] rounded-full animate-pulse'>
+                               
                             </div>
                         </div>
                     ))}

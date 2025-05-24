@@ -33,7 +33,7 @@ const RecipeList = ({ searchTerm, selectedCategoryId }) => {
     if (loading) {
         return (
             <div className='container mt-16 lg:mt-24 '>
-                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-3 lg:gap-x-5 gap-y-14 mb-16 lg:mb-0'>
+                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-3 lg:gap-x-5 gap-y-14 mb-16 lg:mb-0 animate-pulse'>
                   {
                     [1,2,3,4,5,6].map((index) => (
                          <div key={index}
@@ -76,7 +76,8 @@ const RecipeList = ({ searchTerm, selectedCategoryId }) => {
                             <img
                                 src={item.image}
                                 alt={item.name}
-                                className='w-24 h-24 lg:w-28 lg:h-28 object-cover rounded-full absolute top-[-40px] lg:top-[-55px] left-1/2 transform -translate-x-1/2 border-4 border-white dark:border-gray-800'
+                                className='w-24 h-24 lg:w-28 lg:h-28 object-cover rounded-full absolute top-[-40px] lg:top-[-55px] left-1/2 transform
+                                 -translate-x-1/2 border-4 border-white dark:border-black'
                             />
                             <h2 className='text-sm font-semibold mt-2 text-[14px] lg:text-[20px] px-2'>
                                 {item.name}
