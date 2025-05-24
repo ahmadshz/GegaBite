@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import apiClient from '../../../Api/ApiClient';
 import { Link } from 'react-router-dom';
+import Preload from '../../Ui/Preload';
 
 const RecipeList = ({ searchTerm, selectedCategoryId }) => {
     const [data, setData] = useState([]);
@@ -22,18 +23,18 @@ const RecipeList = ({ searchTerm, selectedCategoryId }) => {
 
     const filteredData = data.filter(item => {
         const matchesSearch = item.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                             item.categoryId?.name?.toLowerCase().includes(searchTerm.toLowerCase());
-        
-        const matchesCategory = selectedCategoryId ? 
+            item.categoryId?.name?.toLowerCase().includes(searchTerm.toLowerCase());
+
+        const matchesCategory = selectedCategoryId ?
             (item.categoryId && item.categoryId._id === selectedCategoryId) : true;
-        
+
         return matchesSearch && matchesCategory;
     });
 
     if (loading) {
         return (
-            <div className='container mt-16 lg:mt-24 text-center'>
-                <p className='text-2xl font-bold'>Loading recipes...</p>
+            <div className=''>
+                <Preload />
             </div>
         );
     }
@@ -48,7 +49,7 @@ const RecipeList = ({ searchTerm, selectedCategoryId }) => {
                     </p>
                 ) : (
                     filteredData.map((item) => (
-                        <Link 
+                        <Link
                             to={`/singleproduct/${item._id}`}
                             key={item._id}
                             className='relative pt-16 cursor-pointer bg-gray-100 dark:bg-[#282828] rounded-[28px] min-h-[178px] lg:min-h-[230px] text-center hover:shadow-lg transition-shadow'
