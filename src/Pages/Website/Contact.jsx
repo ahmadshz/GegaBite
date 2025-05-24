@@ -74,7 +74,7 @@ const Contact = () => {
     e.preventDefault();
     const { name, phone, order, location } = formData;
 
-    const text = `Hello Gega Bite!%0A%0AMy name is ${name}.%0APhone: ${phone}%0ALocation: ${location}%0A%0AMy Order:%0A${order}`;
+    const text = `Hello Gega Bite!\n\nMy name is ${name}.\nPhone: ${phone}\nLocation: ${location}\n\nMy Order:\n${order}`;
     window.open(`https://wa.me/96179166996?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -92,9 +92,9 @@ const Contact = () => {
         {/* Contact Cards Grid */}
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16'>
           {contactInfo.map((item, index) => (
-            <a 
-              href={item.link} 
-              target="_blank" 
+            <a
+              href={item.link}
+              target="_blank"
               rel="noopener noreferrer"
               key={index}
               className={`${item.color} p-6 rounded-xl transition-all hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-gray-700`}
@@ -148,9 +148,9 @@ const Contact = () => {
               <form onSubmit={sendWhatsAppMessage} className='space-y-4'>
                 <div>
                   <label htmlFor='name' className='block mb-1 text-sm font-medium'>Your Name*</label>
-                  <input 
-                    type='text' 
-                    id='name' 
+                  <input
+                    type='text'
+                    id='name'
                     name='name'
                     value={formData.name}
                     onChange={handleChange}
@@ -161,9 +161,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <label htmlFor='phone' className='block mb-1 text-sm font-medium'>Phone Number*</label>
-                  <input 
-                    type='tel' 
-                    id='phone' 
+                  <input
+                    type='tel'
+                    id='phone'
                     name='phone'
                     value={formData.phone}
                     onChange={handleChange}
@@ -174,9 +174,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <label htmlFor='location' className='block mb-1 text-sm font-medium'>Location*</label>
-                  <input 
-                    type='text' 
-                    id='location' 
+                  <input
+                    type='text'
+                    id='location'
                     name='location'
                     value={formData.location}
                     onChange={handleChange}
@@ -189,13 +189,13 @@ const Contact = () => {
                     onClick={handleGetLocation}
                     className="mt-2 text-sm  flex items-center gap-2 "
                   >
-                  <MdOutlineAddLocationAlt size={20}  /> <span className='underline'>Use Current Location</span> 
+                    <MdOutlineAddLocationAlt size={20} /> <span className='underline'>Use Current Location</span>
                   </button>
                 </div>
                 <div>
                   <label htmlFor='order' className='block mb-1 text-sm font-medium'>Your Order*</label>
-                  <textarea 
-                    id='order' 
+                  <textarea
+                    id='order'
                     name='order'
                     value={formData.order}
                     onChange={handleChange}
