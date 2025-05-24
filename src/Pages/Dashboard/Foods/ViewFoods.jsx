@@ -35,7 +35,7 @@ const ViewFoods = () => {
 
     return (
         <div className='flex flex-col gap-5 lg:gap-12 '>
-            <h1 className='text-4xl dark:text-white font-semibold '>Foods</h1>
+            <h1 className=' text-2xl lg:text-4xl dark:text-white font-semibold '>Foods</h1>
             <div className="overflow-x-auto rounded-lg shadow-lg   ">
                 <table className="min-w-full">
                     <thead className="bg-[#282828] text-white">

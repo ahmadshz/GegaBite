@@ -4,9 +4,8 @@ import { MdOutlineAddCircleOutline, MdOutlineFastfood } from 'react-icons/md';
 import { TbCategory2, TbCategoryPlus } from 'react-icons/tb';
 import { NavLink, useNavigate } from 'react-router-dom';
 import apiClient from '../../Api/ApiClient';
-import { LuPanelLeftClose } from 'react-icons/lu';
 
-const SideBar = ({ isOpen, toggleClose }) => {
+const SideBar = ({ isOpen }) => {
   const navigate = useNavigate();
 
   const navLink = [
@@ -45,12 +44,6 @@ const SideBar = ({ isOpen, toggleClose }) => {
       flex flex-col items-center justify-between gap-3 py-4 dark:bg-[#282828] duration-300 bg-white`}>
 
       <div className='flex flex-col w-full gap-3'>
-        <div className=' lg:hidden'>
-          <div className={` ${isOpen ? "block" : "hidden"} px-3 lg:px-8 h-full flex items-center gap-2 lg:gap-5`}>
-            <LuPanelLeftClose onClick={toggleClose} className='text-3xl xl:text-4xl  dark:text-white' />
-            <h1 className='  text-2xl xl:text-4xl font-bold  dark:text-white'>Gega Bite</h1>
-          </div>
-        </div>
         {navLink.map((item, index) => (
           <NavLink
             to={item.link}
@@ -58,8 +51,8 @@ const SideBar = ({ isOpen, toggleClose }) => {
             className={({ isActive }) =>
               `text-xl font-semibold w-full rounded-md flex items-center gap-2 dark:text-white
               ${isOpen ? "p-3" : " hidden lg:flex justify-center p-2 "}
-              ${isActive ? " lg:bg-gray-200 lg:dark:bg-[#515151]" : ""}
-              ${isActive && isOpen ? " bg-gray-200 dark:bg-[#515151]" : ""}`
+              ${isActive  ? " lg:bg-gray-200 lg:dark:bg-[#515151]" : ""}
+              ${isActive && isOpen  ? " bg-gray-200 dark:bg-[#515151]" : ""}`
             }
           >
             {item.icon}

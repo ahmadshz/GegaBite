@@ -30,8 +30,8 @@ const Landing = () => {
 
   return (
     <div className='min-h-screen pb-5 md:py-0 md:pt-0 dark:text-white dark:bg-black'>
-     
-    <Navabr toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+
+      <Navabr toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
       <SearchBar onSearch={setSearchTerm} />
       <CategoriesTabs
         onCategorySelect={setSelectedCategoryId}
