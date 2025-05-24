@@ -5,7 +5,8 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    order: '' // Changed from 'message' to 'order' to match your request
+    order: '',
+    location: ''
   });
 
   const contactInfo = [
@@ -50,7 +51,7 @@ const Contact = () => {
   const sendWhatsAppMessage = (e) => {
     e.preventDefault();
     const { name, phone, order } = formData;
-    const text = `Hello Gega Bite!%0A%0AMy name is ${name}.%0APhone: ${phone}%0A%0AMy Order:%0A${order}`;
+const text = `Hello Gega Bite!%0A%0AMy name is ${name}.%0APhone: ${phone}%0ALocation: ${location}%0A%0AMy Order:%0A${order}`;
     window.open(`https://wa.me/96179166996?text=${text}`, '_blank');
   };
 
@@ -157,6 +158,19 @@ const Contact = () => {
                     onChange={handleChange}
                     className='w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-[#282828] focus:outline-none focus:ring-2 focus:ring-amber-500'
                     placeholder='+961 79 166 996'
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor='location' className='block mb-1 text-sm font-medium'>Location*</label>
+                  <input 
+                    type='text' 
+                    id='location' 
+                    name='location'
+                    value={formData.location}
+                    onChange={handleChange}
+                    className='w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-[#282828] focus:outline-none focus:ring-2 focus:ring-amber-500'
+                    placeholder='City, Area, or Address'
                     required
                   />
                 </div>
