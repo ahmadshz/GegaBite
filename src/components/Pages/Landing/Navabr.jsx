@@ -9,7 +9,7 @@ const Navabr = ({ toggleDarkMode, darkMode }) => {
 
     return (
         <div>
-            <div className='py-3 lg:py-5  bg-white dark:bg-black  flex items-center justify-between  container'>
+            <div className=' py-1 lg:py-2  bg-white dark:bg-black  flex items-center justify-between  container'>
                 <div className=' dark:bg-white p-3   rounded-full bg- w-fit'>
                     <img className='w-[60px] h-[60px] rounded-md' src={logo} alt='logo' />
                 </div>
@@ -25,7 +25,7 @@ const Navabr = ({ toggleDarkMode, darkMode }) => {
             <div className=' flex flex-col gap-4 lg:gap-8'>
 
                 <div
-                    className="flex items-center justify-center h-64 lg:h-[500px] w-full bg-cover bg-center "
+                    className="flex items-center justify-center h-[300px] lg:h-[800px] w-full bg-cover bg-center "
                     style={{ backgroundImage: `url(${bgImage})` }}
                 >
 
