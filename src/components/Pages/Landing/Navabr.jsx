@@ -10,9 +10,9 @@ const Navabr = ({ toggleDarkMode, darkMode }) => {
 
     return (
         <div>
-            <div className=' py-1 lg:py-2  bg-white dark:bg-black  flex items-center justify-between  container'>
-                <div className=' dark:bg-white p-3   rounded-full bg- w-fit'>
-                    <img className='w-[60px] h-[60px] rounded-md' src={logo} alt='logo' />
+            <div className=' py-3  bg-white dark:bg-black  flex items-center justify-between  container'>
+                <div className=' dark:bg-white p-2 lg:p-3   rounded-full bg- w-fit'>
+                    <img className='w-[45px] h-[45px]  lg:w-[60px] lg:h-[60px] rounded-md' src={logo} alt='logo' />
                 </div>
                 <button
                     onClick={toggleDarkMode}
