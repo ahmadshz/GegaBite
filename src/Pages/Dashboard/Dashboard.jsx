@@ -18,7 +18,7 @@ const Dashboard = () => {
       <TopBar toggleClose={toggleClose} isOpen={isOpen} />
 
       {/* Main Content */}
-      <div className="flex pt-[70px]">
+      <div className="flex lg:pt-[70px]">
         {/* Sidebar */}
         <SideBar isOpen={isOpen} toggleClose={toggleClose} />
 

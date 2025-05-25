@@ -24,7 +24,7 @@ const Location = () => {
   ]
 
   return (
-    <div className=' min-h-screen lg:min-h-[80vh] dark:text-white dark:bg-black'>
+    <div className=' min-h-screen  dark:text-white dark:bg-black'>
       <div className='container '>
         {/* Header with adjusted padding for mobile */}
         <div className='text-center py-8 lg:py-10 lg:pb-12'>
