@@ -7,9 +7,9 @@ const TopBar = ({ toggleClose, isOpen }) => {
       <div className='px-3 lg:px-8 h-full flex items-center gap-2 lg:gap-5'>
         {
           isOpen ?
-            <LuPanelLeftClose onClick={toggleClose} className='text-3xl xl:text-4xl dark:text-white' />
+            <LuPanelLeftClose onClick={toggleClose} className='text-3xl xl:text-4xl lg:hidden dark:text-white' />
             :
-            <LuPanelRightClose onClick={toggleClose} className='text-3xl xl:text-4xl dark:text-white' />
+            <LuPanelRightClose onClick={toggleClose} className='text-3xl xl:text-4xl lg:hidden dark:text-white' />
         }
         <h1 className='text-2xl xl:text-4xl font-bold dark:text-white'>Gega Bite</h1>
       </div>

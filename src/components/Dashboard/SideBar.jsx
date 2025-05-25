@@ -24,7 +24,7 @@ const SideBar = ({ isOpen, toggleClose }) => {
   };
 
   return (
-    <>
+    <div>
       {/* Overlay */}
       {isOpen && (
         <div
@@ -36,15 +36,15 @@ const SideBar = ({ isOpen, toggleClose }) => {
       {/* Sidebar */}
       <div
         className={`
-          fixed top-0 left-0 z-40 h-full lg:h-[calc(100vh-70px)] xl:h-[calc(100vh-70px)] xl:mt-2 bg-white dark:bg-[#282828]
+          fixed bottom-0 z-40 h-full lg:h-[calc(100vh-70px)] xl:h-[calc(100vh-70px)]  bg-white dark:bg-[#282828]
           border-r-2 border-[#282828] dark:border-gray-600
-          duration-300 flex flex-col justify-between py-4
+          duration-400 flex flex-col justify-between py-4
           transition-transform ease-in-out
-          ${isOpen ? 'translate-x-0 w-64' : '-translate-x-full w-64'}
-          lg:static lg:translate-x-0 lg:w-20
+          ${isOpen ? 'translate-x-0 ' : '-translate-x-full  '}
+           lg:translate-x-0 w-64   
         `}
       >
-        <div className="flex flex-col gap-4 px-4">
+        <div className="flex flex-col gap-4 px-4 lg:py-2">
           {/* Header for mobile */}
           <div className="flex items-center gap-3 mb-6 lg:hidden">
             <LuPanelLeftClose
@@ -65,12 +65,12 @@ const SideBar = ({ isOpen, toggleClose }) => {
                   flex items-center gap-3 rounded-md font-medium
                   ${isActive ? 'bg-gray-200 dark:bg-[#515151]' : ''}
                   text-gray-800 dark:text-white
-                  p-3 lg:justify-center lg:p-2
+                  p-3  lg:p-2 
                 `
               }
             >
               {item.icon}
-              <span className={`text-sm ${isOpen ? 'block' : 'hidden lg:hidden'}`}>
+              <span className={`text-sm lg:text-lg `}>
                 {item.title}
               </span>
             </NavLink>
@@ -78,19 +78,19 @@ const SideBar = ({ isOpen, toggleClose }) => {
         </div>
 
         {/* Logout */}
-        <div className="px-4">
+        <div className="px-4 lg:px-2">
           <button
             onClick={handleLogout}
-            className="flex items-center gap-3 bg-red-600 text-white p-3 rounded-md w-full lg:justify-center"
+            className="flex items-center gap-3 bg-red-600 text-white p-3 rounded-md w-full "
           >
             <BiLogOut size={24} />
-            <span className={`${isOpen ? 'block' : 'hidden lg:hidden'} text-sm`}>
+            <span className={` text-sm lg:text-[16px]`}>
               LogOut
             </span>
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
