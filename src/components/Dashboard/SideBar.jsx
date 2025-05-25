@@ -32,7 +32,7 @@ const SideBar = ({ isOpen, toggleClose }) => {
   ];
 
   const handleLogout = () => {
-    apiClient.get('/api/v1/user/logout').then(() => {
+    apiClient.post('/api/v1/user/logout', {}, { withCredentials: true }).then(() => {
       localStorage.removeItem("access_token");
       navigate('/');
     });
