@@ -8,7 +8,7 @@ const ViewFoods = () => {
     const [foods, setFoods] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 3;
+    const itemsPerPage = 10;
 
     useEffect(() => {
         const fetchFoods = async () => {

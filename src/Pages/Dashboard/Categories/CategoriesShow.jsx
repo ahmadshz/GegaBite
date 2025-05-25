@@ -10,7 +10,7 @@ const CategoriesShow = () => {
     const [error, setError] = useState(null);
 
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 5;
+    const itemsPerPage = 10;
 
     const fetchCategories = async () => {
         try {
