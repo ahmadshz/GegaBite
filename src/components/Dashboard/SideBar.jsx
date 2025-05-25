@@ -4,6 +4,7 @@ import { MdOutlineAddCircleOutline, MdOutlineFastfood } from 'react-icons/md';
 import { TbCategory2, TbCategoryPlus } from 'react-icons/tb';
 import { NavLink, useNavigate } from 'react-router-dom';
 import apiClient from '../../Api/ApiClient';
+import { LuPanelLeftClose } from 'react-icons/lu';
 
 const SideBar = ({ isOpen, toggleClose }) => {
   const navigate = useNavigate();
@@ -40,10 +41,18 @@ const SideBar = ({ isOpen, toggleClose }) => {
 
   return (
     <div className={`lg:fixed bottom-0 ${isOpen ? "fixed z-30 w-60 xl:w-80 px-3 lg:px-8" : " w-0 border-r-0 lg:border-r-2 lg:w-20 lg:px-4"} 
-      h-[calc(100vh-70px)] xl:h-[calc(100%-80px)] border-r-2 border-[#282828] dark:border-gray-600 
+     h-full  lg:h-[calc(100vh-70px)] xl:h-[calc(100%-80px)] border-r-2 border-[#282828] dark:border-gray-600 
       flex flex-col items-center justify-between gap-3 py-4 dark:bg-[#282828] duration-300 bg-white`}>
 
+
       <div className='flex flex-col w-full gap-3'>
+        <div className=' lg:hidden mb-6  flex items-center gap-2 lg:gap-5'>
+          {
+            <LuPanelLeftClose onClick={toggleClose} className='text-3xl xl:text-4xl dark:text-white' />
+
+          }
+          <h1 className='text-2xl xl:text-4xl font-bold dark:text-white'>Gega Bite</h1>
+        </div>
         {navLink.map((item, index) => (
           <NavLink
             to={item.link}
