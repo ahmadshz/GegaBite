@@ -62,7 +62,7 @@ const RecipeList = ({ searchTerm, selectedCategoryId }) => {
         <div className='container mt-16 lg:mt-24'>
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-3 lg:gap-x-5 gap-y-14 mb-16 lg:mb-0'>
                 {filteredData.length === 0 ? (
-                    <p className='text-2xl font-bold text-center col-span-5'>
+                    <p className='text-2xl font-bold text-center col-span-5 min-h-[230px] flex justify-center items-center'>
                         No recipes found {searchTerm ? `for "${searchTerm}"` : ''}
                         {selectedCategoryId && ` in this category`}
                     </p>
@@ -86,7 +86,7 @@ const RecipeList = ({ searchTerm, selectedCategoryId }) => {
                                 <div className='w-2/4 text-center'>{item.price}$</div>
                                 <div className='h-[50px] lg:h-[100px] w-[2px] rounded-full bg-[#282828] dark:bg-white' />
                                 <div className='w-2/4 text-center break-words py-2'>
-                                    {item.categoryId?.name || 'Uncategorized'}
+                                    {item.categoryId.name || 'Uncategorized'}
                                 </div>
                             </div>
                         </Link>
