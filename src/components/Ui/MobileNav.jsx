@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 
 const MobileNav = () => {
     return (
-        <div className='w-full bg-white dark:bg-[#212121] fixed md:hidden bottom-0 h-[68px] flex items-center justify-evenly'>
+        <div className='w-full z-20 bg-white dark:bg-[#212121] fixed md:hidden bottom-0 h-[68px] flex items-center justify-evenly'>
 
             <NavLink to={'/'} className={({ isActive }) => isActive ? "text-[#FEC30D]" : "dark:text-white"}>
                 <BiHomeAlt size={33} />

@@ -40,7 +40,9 @@ const Landing = () => {
       <RecipeList
         searchTerm={searchTerm}
         selectedCategoryId={selectedCategoryId}
+        onAutoCategorySelect={setSelectedCategoryId}
       />
+
       <div className='hidden md:block mt-28 lg:mt-44'>
         <Location />
         <Contact />

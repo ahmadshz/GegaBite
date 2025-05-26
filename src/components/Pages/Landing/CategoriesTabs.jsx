@@ -33,7 +33,7 @@ const CategoriesTabs = ({ onCategorySelect, selectedCategoryId }) => {
                     {[...Array(5)].map((_, i) => (
                         <div key={i} className='shrink-0'>
                             <div className='w-24 h-6 flex items-center gap-2 bg-gray-200 dark:bg-[#282828] rounded-full animate-pulse'>
-                               
+
                             </div>
                         </div>
                     ))}
@@ -41,48 +41,49 @@ const CategoriesTabs = ({ onCategorySelect, selectedCategoryId }) => {
             </div>
         );
     }
-
     return (
-        <div className='container'>
-            <div className='flex gap-2 md:gap-5 lg:gap-6 whitespace-nowrap overflow-x-auto red-scrollbar lg:pb-2'>
-                {/* All Categories Tab */}
-                <div className='cursor-pointer flex flex-col items-center shrink-0'>
-                    <div
-                        className={`px-3 py-1 lg:px-3 lg:py-4 flex items-center gap-2
+        <div className=' bg-white dark:bg-black py-3'>
+            <div className='container'>
+                <div className='flex gap-2 md:gap-5 lg:gap-6 whitespace-nowrap overflow-x-auto red-scrollbar lg:pb-2'>
+                    {/* All Categories Tab */}
+                    <div className='cursor-pointer flex flex-col items-center shrink-0'>
+                        <div
+                            className={`px-3 py-1 lg:px-3 lg:py-2 flex items-center gap-2
                             ${!selectedCategoryId ? 'bg-[#FEC30D]' : 'bg-gray-100 dark:bg-[#282828]'} 
                             w-fit rounded-full`}
-                        onClick={() => onCategorySelect(null)}
-                    >
-                        <span className='text-sm lg:text-lg'>All</span>
+                            onClick={() => onCategorySelect(null)}
+                        >
+                            <span className='text-sm lg:text-lg'>All</span>
+                        </div>
                     </div>
-                </div>
 
-                {/* Category Tabs */}
-                {categories.map((tab) => (
-                    <div
-                        key={tab._id}
-                        className='cursor-pointer flex flex-col items-center shrink-0'
-                        onClick={() => handleTabClick(tab)}
-                    >
-                        <div className={`px-3 py-1 lg:px-3 lg:py-4 flex items-center gap-2
+                    {/* Category Tabs */}
+                    {categories.map((tab) => (
+                        <div
+                            key={tab._id}
+                            className='cursor-pointer flex flex-col items-center shrink-0'
+                            onClick={() => handleTabClick(tab)}
+                        >
+                            <div className={`px-3 py-1 lg:px-3 lg:py-2 flex items-center gap-2
                             ${selectedCategoryId === tab._id ? 'bg-[#FEC30D]' : 'bg-gray-100 dark:bg-[#282828]'} 
                             w-fit rounded-full`}
-                        >
-                            {
-                                tab.image &&
+                            >
+                                {tab.image &&
                                     <img
                                         className='w-5 h-5 lg:w-7 lg:h-7 object-cover rounded-full'
                                         src={tab.image}
                                         alt={tab.name}
                                     />
-                            }
-                            <span className='text-sm lg:text-lg'>{tab.name}</span>
+                                }
+                                <span className='text-sm lg:text-lg'>{tab.name}</span>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </div>
     );
+
 };
 
 export default CategoriesTabs;
