@@ -65,6 +65,7 @@ const App = () => {
             <Route path='categries' element={<CategoriesShow />} />
             <Route path='addcategory' element={<AddCategories />} />
             <Route path='updatecategory/:id' element={<EditCategory />} />
+            
             <Route path='viewfoods' element={<ViewFoods />} />
             <Route path='AddFoodPage' element={<AddFoodPage />} />
             <Route path='EditFoodPage/:id' element={<EditFood />} />

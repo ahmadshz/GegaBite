@@ -40,7 +40,8 @@ const EditFood = () => {
                 const response = await apiClient.get(`/api/v1/products/show/${id}`);
                 const product = response.data.product;
 
-                setCategory(product.categoryId || '');
+                const catId = product.categoryId?._id || '';
+                setCategory(catId);
                 setName(product.name);
                 setPrice(product.price);
                 setDescriptions(product.description || ['']);

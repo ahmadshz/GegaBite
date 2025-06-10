@@ -26,7 +26,7 @@ const Navabr = ({ toggleDarkMode, darkMode }) => {
             <div className=' flex flex-col gap-4 lg:gap-8'>
 
                 <div
-                    className="flex items-center justify-center h-[300px] lg:h-[800px] w-full bg-cover bg-center "
+                    className="flex items-center justify-center h-[300px] lg:h-[400px] w-full bg-cover bg-center "
                     style={{ backgroundImage: `url(${bgImage})` }}
                 >
 
