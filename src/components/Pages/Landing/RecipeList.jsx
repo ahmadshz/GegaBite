@@ -82,31 +82,37 @@ const RecipeList = ({ searchTerm, selectedCategoryId }) => {
                         <h2 className='text-2xl font-bold mb-14 lg:mb-20 text-center  dark:text-yellow-400'>
                             {categoryName}
                         </h2>
-                        <div className='grid grid-cols-2 md:grid-cols-3  lg:grid-cols-5 gap-x-3 lg:gap-x-5 gap-y-14'>
+                        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-3 lg:gap-x-2 gap-y-14'>
                             {products.map((item) => (
                                 <Link
                                     to={`/singleproduct/${item._id}`}
                                     key={item._id}
-                                    className='relative pt-16 cursor-pointer bg-gray-100 dark:bg-[#282828] rounded-[28px] min-h-[178px] lg:min-h-[230px] text-center hover:shadow-lg transition-shadow'
+                                    className='relative pt-16 cursor-pointer bg-gray-100 dark:bg-[#282828] rounded-[28px] min-h-[190px] lg:min-h-[250px] text-center hover:shadow-lg transition-shadow flex flex-col justify-between pb-4'
                                 >
+                                    {/* Image */}
                                     <img
                                         src={item.image}
                                         alt={item.name}
                                         className='w-24 h-24 lg:w-28 lg:h-28 object-cover rounded-full absolute top-[-40px] lg:top-[-55px] left-1/2 transform -translate-x-1/2 border-4 border-white dark:border-black'
                                     />
-                                    <h2 className='text-sm font-semibold mt-2 text-[14px] lg:text-[20px] px-2'>
+
+                                    {/* Title */}
+                                    <h2 className='mt-2 px-4 text-sm font-semibold text-[14px] lg:text-[20px] leading-snug line-clamp-2'>
                                         {item.name}
                                     </h2>
-                                    <div className='flex justify-center items-center gap-1 mt-4 text-sm text-[14px] lg:text-[20px]'>
+
+                                    {/* Price & Category */}
+                                    <div className='flex justify-center items-center gap-1 mt-4 text-sm text-[14px] lg:text-[18px] px-2'>
                                         <div className='w-2/4 text-center'>{item.price}$</div>
-                                        <div className='h-[50px] lg:h-[100px] w-[2px] rounded-full bg-[#282828] dark:bg-white' />
-                                        <div className='w-2/4 text-center break-words py-2'>
+                                        <div className='h-[50px] lg:h-[80px] w-[2px] rounded-full bg-[#282828] dark:bg-white' />
+                                        <div className='w-2/4 text-center break-words py-1'>
                                             {item.categoryId.name || 'Uncategorized'}
                                         </div>
                                     </div>
                                 </Link>
                             ))}
                         </div>
+
                     </div>
                 ))
             )}
