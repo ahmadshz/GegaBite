@@ -63,7 +63,7 @@ const SingleProduct = () => {
                             }
                         </div>
                         <div className='min-h-[calc(100vh-35vh)] container bg-gray-100 w-full dark:bg-[#282828] py-5 rounded-t-[40px]'>
-                            <div className='text-center  text-[24px] lg:text-[32px] font-bold'>{item.name}</div>
+                            <div className='text-center  text-[24px] lg:text-[32px] font-semibold mt-5 '>{item.name}</div>
                             <div className='flex justify-center items-center gap-1 mt-4 lg:mt-14  text-[14px] lg:text-[24px]'>
                                 <div className='w-2/5 text-center '>{item.price}$</div>
                                 <div className='h-[50px] lg:h-[100px] w-[2px] rounded-full bg-[#282828] dark:bg-white' />
