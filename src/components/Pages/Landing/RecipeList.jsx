@@ -45,7 +45,7 @@ const RecipeList = ({ searchTerm, selectedCategoryId }) => {
             <div className='container mt-12'>
 
                 <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-3 lg:gap-x-5 gap-y-14 mb-16 lg:mb-0 animate-pulse'>
-                    <div className='col-span-2 flex items-center justify-center mb-4 '>
+                    <div className='col-span-2 md:col-span-3 lg:col-span-4 xl:col-span-5 flex items-center justify-center mb-4 '>
                         <div className=' w-28 h-6 bg-gray-200 dark:bg-[#282828] rounded-full' />
 
                     </div>
@@ -82,7 +82,7 @@ const RecipeList = ({ searchTerm, selectedCategoryId }) => {
                         <h2 className='text-2xl font-bold mb-14 lg:mb-20 text-center  dark:text-yellow-400'>
                             {categoryName}
                         </h2>
-                        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-3 lg:gap-x-2 gap-y-14'>
+                        <div className='grid grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:col-span-5 gap-x-3 lg:gap-x-4 gap-y-14'>
                             {products.map((item) => (
                                 <Link
                                     to={`/singleproduct/${item._id}`}
