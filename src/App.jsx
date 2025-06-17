@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Landing from './components/Pages/Landing/Landing';
 import Login from './Auth/Login';
 import Website from './Pages/Website/Website';
@@ -15,8 +15,10 @@ import EditFood from './Pages/Dashboard/Foods/EditFood';
 import RequireAuth from './Auth/RequireAuth';
 import RequireBack from './Auth/RequireBack';
 import SingleProduct from './Pages/Website/SingleProduct';
+import BtnToTop from './components/Ui/BtnToTop';
 
 const App = () => {
+  const location = useLocation();
   const [showPreload, setShowPreload] = useState(true);
 
   useEffect(() => {
@@ -29,13 +31,14 @@ const App = () => {
 
   const isMainLocation = location.pathname === '/';
 
+  const showBtnToTop = !location.pathname.startsWith('/dashboard') && location.pathname !== '/login';
+
   if (showPreload) return (
     <div className='fixed inset-0 bg-[#FEC30D] dark:bg-black z-50 flex flex-col items-center justify-center text-center px-4'>
       {
         isMainLocation &&
         <h1 className='text-3xl font-bold text-black dark:text-white mb-4'>
           Welcome to Gega Bite
-
         </h1>
       }
       <div>
@@ -65,7 +68,6 @@ const App = () => {
             <Route path='categries' element={<CategoriesShow />} />
             <Route path='addcategory' element={<AddCategories />} />
             <Route path='updatecategory/:id' element={<EditCategory />} />
-            
             <Route path='viewfoods' element={<ViewFoods />} />
             <Route path='AddFoodPage' element={<AddFoodPage />} />
             <Route path='EditFoodPage/:id' element={<EditFood />} />
@@ -74,6 +76,9 @@ const App = () => {
 
         <Route path='/singleproduct/:id' element={<SingleProduct />} />
       </Routes>
+
+      {/* زر الرجوع للأعلى يظهر فقط في الصفحات العامة */}
+      {showBtnToTop && <BtnToTop />}
     </div>
   );
 };

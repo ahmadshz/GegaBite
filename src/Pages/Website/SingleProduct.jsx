@@ -87,7 +87,6 @@ const SingleProduct = () => {
                                             <h1 className='  font-semibold'>Instructions</h1>
                                             <div>
                                                 {item.description
-                                                    .filter(text => text.trim() !== '') // نحذف العناصر الفاضية
                                                     .map((desc, index) => (
                                                         <p key={index} className='mt-2 text-[14px] lg:text-[20px]'>
                                                             <span className='w-2 h-2 inline-block rounded-full mx-2 bg-[#FEC30D]'></span>

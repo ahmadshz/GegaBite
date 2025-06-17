@@ -6,6 +6,7 @@ import RecipeList from './RecipeList';
 import Footer from './Footer';
 import Contact from '../../../Pages/Website/Contact';
 import Location from '../../../Pages/Website/Location';
+import BtnToTop from '../../Ui/BtnToTop';
 
 const Landing = () => {
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem("theme") === "dark");
@@ -48,6 +49,7 @@ const Landing = () => {
         <Contact />
         <Footer />
       </div>
+
     </div>
   );
 };
