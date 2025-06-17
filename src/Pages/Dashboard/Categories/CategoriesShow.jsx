@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { FaRegEdit } from 'react-icons/fa'
-import { MdDelete } from 'react-icons/md'
+import { MdDelete, MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import apiClient from '../../../Api/ApiClient'
 
@@ -17,7 +17,7 @@ const CategoriesShow = () => {
             setLoading(true);
             const response = await apiClient.get(`/api/v1/category/index`);
             setCategories(response.data.categories);
-        } catch  {
+        } catch {
             setError('Error fetching categories');
         } finally {
             setLoading(false);
@@ -116,23 +116,72 @@ const CategoriesShow = () => {
             </div>
 
             {/* Pagination controls */}
-            {categories.length > itemsPerPage && (
-                <div className="flex justify-center mt-4 gap-2">
-                    {Array.from({ length: totalPages }, (_, i) => (
-                        <button
-                            key={i}
-                            onClick={() => paginate(i + 1)}
-                            className={`px-3 py-1 rounded-md border text-sm font-medium ${
-                                currentPage === i + 1
-                                    ? 'bg-[#282828] text-white '
-                                    : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:hover:bg-gray-500 text-black dark:text-white'
-                            }`}
-                        >
-                            {i + 1}
-                        </button>
-                    ))}
+            {totalPages > 1 && (
+                <div className="flex justify-center mt-4 gap-1 flex-wrap">
+                    {/* Prev Button */}
+                    <button
+                        onClick={() => paginate(currentPage - 1)}
+                        disabled={currentPage === 1}
+                        className="px-3 py-1 rounded-md border text-sm font-medium bg-gray-100 dark:bg-gray-700 dark:text-white disabled:opacity-50"
+                    >
+                        <MdKeyboardDoubleArrowLeft size={20} />
+                    </button>
+
+                    {(() => {
+                        const pages = [];
+                        const showPage = (page) => {
+                            pages.push(
+                                <button
+                                    key={page}
+                                    onClick={() => paginate(page)}
+                                    className={`px-3 py-1 rounded-md border text-sm font-medium ${currentPage === page
+                                        ? 'bg-[#282828] text-white'
+                                        : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:hover:bg-gray-500 text-black dark:text-white'
+                                        }`}
+                                >
+                                    {page}
+                                </button>
+                            );
+                        };
+
+                        let addedLeftDots = false;
+                        let addedRightDots = false;
+
+                        for (let i = 1; i <= totalPages; i++) {
+                            if (
+                                i === 1 ||
+                                i === totalPages ||
+                                (i >= currentPage - 1 && i <= currentPage + 1)
+                            ) {
+                                showPage(i);
+                            } else if (i < currentPage && !addedLeftDots) {
+                                pages.push(
+                                    <span key="leftDots" className="px-2 text-gray-500 dark:text-gray-300">...</span>
+                                );
+                                addedLeftDots = true;
+                            } else if (i > currentPage && !addedRightDots) {
+                                pages.push(
+                                    <span key="rightDots" className="px-2 text-gray-500 dark:text-gray-300">...</span>
+                                );
+                                addedRightDots = true;
+                            }
+                        }
+
+                        return pages;
+                    })()}
+
+                    {/* Next Button */}
+                    <button
+                        onClick={() => paginate(currentPage + 1)}
+                        disabled={currentPage === totalPages}
+                        className="px-3 py-1 rounded-md border text-sm font-medium bg-gray-100 dark:bg-gray-700 dark:text-white disabled:opacity-50"
+                    >
+                        <MdKeyboardDoubleArrowRight size={20} />
+
+                    </button>
                 </div>
             )}
+
         </div>
     );
 };

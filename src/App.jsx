@@ -78,7 +78,6 @@ const App = () => {
         <Route path='/singleproduct/:id' element={<SingleProduct />} />
       </Routes>
 
-      {/* زر الرجوع للأعلى يظهر فقط في الصفحات العامة */}
       {showBtnToTop && <BtnToTop />}
     </div>
   );
