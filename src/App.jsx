@@ -31,7 +31,7 @@ const App = () => {
 
   const isMainLocation = location.pathname === '/';
 
-  const showBtnToTop = !location.pathname.startsWith('/dashboard') && location.pathname !== '/login';
+  const showBtnToTop = !location.pathname.startsWith('/dashboard') && location.pathname !== '/login' && location.pathname !== '/singleproduct/:id';
 
   if (showPreload) return (
     <div className='fixed inset-0 bg-[#FEC30D] dark:bg-black z-50 flex flex-col items-center justify-center text-center px-4'>
