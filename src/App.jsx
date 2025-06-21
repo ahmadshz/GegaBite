@@ -38,7 +38,6 @@ const App = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const isMainLocation = location.pathname === '/';
 
   const showBtnToTop =
     !location.pathname.startsWith('/dashboard') &&
@@ -54,11 +53,9 @@ const App = () => {
         <div className="bg-white p-4 rounded-full w-32 h-32 flex items-center justify-center animate__animated animate__fadeInDown">
           <img src={img} className="w-[85%]" alt="" />
         </div>
-        {isMainLocation && (
           <h1 className="text-2xl lg:text-3xl font-bold text-black mt-4 animate__animated animate__fadeInDown">
             Welcome to Gega Bite
           </h1>
-        )}
       </div>
     );
   }
