@@ -37,13 +37,13 @@ const App = () => {
 
   if (showPreload) return (
     <div className='fixed inset-0 bg-[#FEC30D]  z-50 flex flex-col items-center justify-center text-center px-4'>
-      <div className='bg-white p-4 rounded-full w-32 h-32 flex items-center justify-center'>
+      <div className='bg-white p-4 rounded-full w-32 h-32 flex items-center justify-center animate__animated animate__fadeInDown'>
         <img src={img} className=' w-[85%]' alt='' />
 
       </div>
       {
         isMainLocation &&
-        <h1 className=' text-2xl lg:text-3xl font-bold text-black  mt-4'>
+        <h1 className=' text-2xl lg:text-3xl font-bold text-black  mt-4 animate__animated animate__fadeInDown'>
           Welcome to Gega Bite
         </h1>
       }
