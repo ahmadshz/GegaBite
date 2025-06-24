@@ -4,8 +4,8 @@ import { GrMapLocation } from 'react-icons/gr'
 
 const BottomNav = () => {
   return (
-    <div className='z-20 left-3 right-3 rounded-full bg-gray-300/30 backdrop-blur-2xl dark:bg-[#212121]/50 fixed md:hidden bottom-3 h-[65px]
-     grid grid-cols-3 items-center  px-4 shadow-lg transition-all duration-300'>
+    <div className='z-20 left-3 right-3 rounded-full bg-white backdrop-blur-2xl dark:bg-[#212121]/50 fixed md:hidden bottom-3 h-[65px]
+     grid grid-cols-3 items-center  px-3 shadow-lg transition-all duration-300'>
 
       {[
         { to: '/', icon: <BiHomeAlt size={22} />, label: 'Home' },
