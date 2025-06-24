@@ -4,7 +4,8 @@ import { GrMapLocation } from 'react-icons/gr'
 
 const BottomNav = () => {
   return (
-    <div className='z-20 left-3 right-3 rounded-full bg-gray-300/30 backdrop-blur-md dark:bg-[#212121]/50 fixed md:hidden bottom-3 h-[65px] flex items-center justify-between px-4 shadow-lg transition-all duration-300'>
+    <div className='z-20 left-3 right-3 rounded-full bg-gray-300/30 backdrop-blur-md dark:bg-[#212121]/50 fixed md:hidden bottom-3 h-[65px]
+     flex items-center justify-between px-4 shadow-lg transition-all duration-300'>
 
       {[
         { to: '/', icon: <BiHomeAlt size={24} />, label: 'Home' },
@@ -15,15 +16,15 @@ const BottomNav = () => {
           {({ isActive }) => (
             <div
               className={`
-                group p-3 rounded-full flex items-center gap-2
+                group p-3 rounded-full flex items-center justify-between gap-2
                 transition-all duration-300 ease-in-out
                 ${isActive
-                  ? "text-[#FEC30D] bg-gray-200 dark:bg-[#2a2a2a] scale-105 shadow-md"
+                  ? "text-[#FEC30D] bg-gray-200 dark:bg-[#2a2a2a] "
                   : "dark:text-white hover:bg-gray-100/20"}
               `}
             >
               {item.icon}
-              <span className={`text-sm font-medium transition-opacity duration-200 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+              <span className={`text-sm font-medium transition-opacity duration-200 ${isActive ? 'opacity-100' : 'text-black group-hover:opacity-100'}`}>
                 {item.label}
               </span>
             </div>
