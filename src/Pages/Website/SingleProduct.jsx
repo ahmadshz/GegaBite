@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import apiClient from '../../Api/ApiClient';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { ImArrowUpLeft2 } from "react-icons/im";
+
 
 const SingleProduct = () => {
     const [data, setData] = useState([]);
@@ -10,6 +12,7 @@ const SingleProduct = () => {
     const { id } = useParams();
 
 
+const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -79,8 +82,8 @@ const SingleProduct = () => {
                                 {
                                     !item.description || item.description.filter(text => text.trim() !== '').length === 0 ? (
                                         <p className=' font-[500] text-center '>
-                                          
-                                        Every bite tells a story... Let the flavor do the talking! 🍴
+
+                                            Every bite tells a story... Let the flavor do the talking! 🍴
                                         </p>
                                     ) : (
                                         <div>
@@ -99,7 +102,9 @@ const SingleProduct = () => {
                                 }
                             </div>
 
-
+                            <div className='fixed top-5 left-5 md:left-8 md:top-8 lg:top-12 lg:left-12 xl:left-24 2xl:left-56 text-[26px] lg:text-[40px]'>
+                                <ImArrowUpLeft2 className='-rotate-45'  onClick={() => navigate(-1)} />
+                            </div>
 
                         </div>
 
