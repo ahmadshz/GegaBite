@@ -24,7 +24,7 @@ const BottomNav = () => {
               `}
             >
               {item.icon}
-              <span className={`text-sm font-medium transition-opacity duration-200 ${isActive ? 'opacity-100' : 'text-black group-hover:opacity-100'}`}>
+              <span className={`text-sm font-medium transition-opacity duration-200 ${isActive ? 'opacity-100' : 'text-black dark:text-white group-hover:opacity-100'}`}>
                 {item.label}
               </span>
             </div>
