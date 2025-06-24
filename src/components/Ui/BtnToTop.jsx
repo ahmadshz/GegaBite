@@ -21,7 +21,7 @@ const BtnToTop = () => {
   return (
     <div
       onClick={goToTop}
-      className={`fixed bottom-[85px] md:bottom-7 right-5 bg-gray-100 dark:bg-[#212121] p-3 rotate-45 rounded-sm cursor-pointer 
+      className={`fixed bottom-[100px] md:bottom-7 right-5 bg-gray-100 dark:bg-[#212121] p-3 rotate-45 rounded-sm cursor-pointer 
         shadow-[0_0_20px_rgba(0,0,0,0.3)] dark:shadow-[0_0_20px_rgba(255,255,255,0.2)] 
         transition-opacity duration-500 ${showButton ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
     >
