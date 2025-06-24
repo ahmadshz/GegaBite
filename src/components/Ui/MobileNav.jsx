@@ -16,7 +16,7 @@ const BottomNav = () => {
           {({ isActive }) => (
             <div
               className={`
-                group p-3 rounded-full flex items-center justify-between gap-2
+                group p-3 rounded-full flex items-center  gap-2
                 transition-all duration-300 ease-in-out
                 ${isActive
                   ? "text-[#FEC30D] bg-gray-200 dark:bg-[#2a2a2a] "
