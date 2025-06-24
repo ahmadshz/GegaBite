@@ -4,7 +4,7 @@ import { GrMapLocation } from 'react-icons/gr'
 
 const BottomNav = () => {
   return (
-    <div className='z-20 left-3 right-3 rounded-full bg-gray-600/30 backdrop-blur-md dark:bg-[#212121]/50 fixed md:hidden bottom-3 h-[65px]
+    <div className='z-20 left-3 right-3 rounded-full bg-gray-300/30 backdrop-blur-2xl dark:bg-[#212121]/50 fixed md:hidden bottom-3 h-[65px]
      grid grid-cols-3 items-center  px-4 shadow-lg transition-all duration-300'>
 
       {[
@@ -16,7 +16,7 @@ const BottomNav = () => {
           {({ isActive }) => (
             <div
               className={`
-                group p-3 rounded-full flex items-center  gap-1
+                group p-3 rounded-full flex items-center  justify-center gap-1
                 transition-all duration-300 ease-in-out
                 ${isActive
                   ? "text-[#FEC30D] bg-gray-200 dark:bg-[#2a2a2a] "
@@ -24,7 +24,7 @@ const BottomNav = () => {
               `}
             >
               {item.icon}
-              <span className={`text-[12px] font-medium transition-opacity duration-200 ${isActive ? 'opacity-100' : 'text-black dark:text-white group-hover:opacity-100'}`}>
+              <span className={`text-[12px] mt-1 font-medium transition-opacity duration-200 ${isActive ? 'opacity-100' : 'text-black dark:text-white group-hover:opacity-100'}`}>
                 {item.label}
               </span>
             </div>
