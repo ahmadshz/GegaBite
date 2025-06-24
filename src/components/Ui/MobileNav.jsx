@@ -5,7 +5,11 @@ import { GrMapLocation } from 'react-icons/gr'
 const BottomNav = () => {
   return (
     <div className='z-20 left-3 right-3 rounded-full bg-white backdrop-blur-2xl dark:bg-[#212121]/50 fixed md:hidden bottom-3 h-[65px]
-     grid grid-cols-3 items-center  px-3 shadow-lg transition-all duration-300'>
+     grid grid-cols-3 items-center  px-3  transition-all duration-300'
+     style={{
+        boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)'
+     }}
+     >
 
       {[
         { to: '/', icon: <BiHomeAlt size={22} />, label: 'Home' },
@@ -19,7 +23,7 @@ const BottomNav = () => {
                 group p-3 rounded-full flex items-center  justify-center gap-1
                 transition-all duration-300 ease-in-out
                 ${isActive
-                  ? "text-[#FEC30D] bg-gray-200 dark:bg-[#2a2a2a] "
+                  ? "text-[#FEC30D] bg-gray-100 dark:bg-[#2a2a2a] "
                   : "dark:text-white hover:bg-gray-100/20"}
               `}
             >
