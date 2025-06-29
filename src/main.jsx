@@ -6,6 +6,7 @@ import '@fontsource-variable/kantumruy-pro';
 import { BrowserRouter } from 'react-router-dom';
 import 'animate.css';
 
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
